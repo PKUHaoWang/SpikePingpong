@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <br>
+    <!-- <div class="logo" style="text-align: center;">
+        <a href="index.html">
+          <img src="./assets/images/logo.png">
+        </a>
+    </div> -->
+    <title>SpikePingpong: High-Frequency Spike Vision-based Robot Learning for Precise Striking in Table Tennis Game
+    </title>
+
+    <!-- <script>
+        var task_map = {
+            "simple-object-manipulation": "simple_object_manipulation",
+            "visual-goal-reaching": "visual_goal_reaching",
+            "novel-concept-grounding": "novel_concept_grounding",
+            "one-shot-video-imitation": "one_shot_video_imitation",
+            "visual-constraint-satisfaction": "visual_constraint_satisfaction",
+            "visual-reasoning": "visual_reasoning"
+        };
+
+        function updateDemoVideo(category) {
+            // var demo = document.getElementById("single-menu-demos").value;
+            var task = document.getElementById(category + "-menu-tasks").value;
+            var inst = document.getElementById(category + "-menu-instances").value;
+
+            console.log(task_map[category], task, inst)
+
+            var video = document.getElementById(category + "-single-task-video");
+            video.src = "assets/videos/demos/" +
+                task_map[category] +
+                "/" +
+                task +
+                "/" +
+                inst +
+                ".mp4";
+            video.playbackRate = 2.0;
+            video.play();
+        }
+    </script> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+
+
+
+<body>
+    <!-- Title and Author -->
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">SpikePingpong: High-Frequency Spike Vision-based Robot Learning for Precise Striking in Table Tennis Game</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a target="_blank" href="https://pkuhaowang.github.io/">Hao&#160;Wang</a><sup>1,2*</sup>,
+                                <a target="_blank" href="https://jackhck.github.io/">Chengkai&#160;Hou</a><sup>1,2*</sup>,
+                                <a target="_blank" href="https://ieeexplore.ieee.org/author/37089431576">Xianglong&#160;Li</a><sup>2*</sup>,
+                                <a target="_blank" href="https://github.com/AureleoPKU">Yankai&#160;Fu</a><sup>1</sup>,
+                                <a target="_blank" href="https://github.com/2644521362">Chenxuan&#160;Li</a><sup>1</sup>,
+                                <a target="_blank" href="https://github.com/ccdcs">Ning&#160;Chen</a><sup>1</sup>,
+                                <a target="_blank" href="https://scholar.google.com/citations?user=2Of6xZUAAAAJ&hl=en&oi=sra">Gaole&#160;Dai</a><sup>1</sup>,
+                                <a target="_blank" href="https://liujiaming1996.github.io/">Jiaming&#160;Liu</a><sup>1</sup>,
+                                <br>
+                                <a target="_blank"
+                                    href="https://idm.pku.edu.cn/info/1017/1040.htm">Tiejun&#160;Huang</a><sup>1</sup>,
+                                <a target="_blank"
+                                    href="https://www.shanghangzhang.com/">Shanghang&#160;Zhang</a><sup>1,2&#9993;</sup>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University; </span>
+                            <span class="author-block"><sup>2</sup>Beijing Academy of Artificial Intelligence (BAAI); </span>
+                        </div>
+
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>*&#160;</sup>Equal Contribution&#160;&#160;</span>
+                            <span class="author-block"><sup>&#9993;&#160;</sup>Corresponding Author&#160;&#160;</span>
+                            <!-- <span class="author-block"><sup>&dagger;&#160;</sup>Project Leader&#160;&#160;</span> -->
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- TODO PDF Link. -->
+                                <span class="link-block">
+                                    <a target="_blank" href="https://github.com/PKUHaoWang/SpikePingpong"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a target="_blank" href="https://github.com/PKUHaoWang/SpikePingpong"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>PDF</span>
+                                    </a>
+                                </span>
+                                
+
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a href="https://github.com/PKUHaoWang/SpikePingpong"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Code coming soon</span>
+                                    </a>
+                                </span>
+
+                                <!-- <span class="link-block">
+                                    <a href="https://www.youtube.com/watch?v=uiXKfOrfGrQ" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-video"></i>
+                                        </span>
+                                        <span>Video</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a href="https://www.bilibili.com/video/BV1YXQRY2EHk" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-film"></i>
+                                        </span>
+                                        <span>BiilBili</span>
+                                    </a>
+                                </span> -->
+
+
+                                <!-- Code Link. -->
+                                <!-- <span class="link-block">
+                                    <a target="_blank" href=""
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                    <a target="_blank" href=""
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-database"></i>
+                                        </span>
+                                        <span>Dataset</span>
+                                    </a>
+                                </span> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <div class="content">
+                            <h2>
+                                <!-- <h2 class=""> <img src="static/images/highlight_logo.png" width="50"> Highlights</h2> -->
+                                <div class="text-image-container title is-3">
+                                    <div>
+                                        <img src="assets/images/video_logo.png" alt="highlight" width="40">
+                                    </div>
+                                    <div class="text">
+                                        <p>Summary Video</p>
+                                    </div>
+                                </div>
+                            </h2>
+                            <div class="container is-max-desktop">
+                                <div id="results-carousel-teaser1" class="carousel results-carousel">
+                                    <div class="item item-video7">
+                                        <video poster="" id="video7" autoplay playsinline controls muted loop height="100%">
+                                            <source src="assets/videos/SpikePingpong.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero is-small">
+
+        <div class="hero-body">
+            <div class="container is-max-desktop has-text-centered">
+
+                <h2>
+                    <!-- <h2 class=""> <img src="static/images/highlight_logo.png" width="50"> Highlights</h2> -->
+                    <div class="text-image-container title is-3">
+                        <div>
+                            <img src="assets/images/highlight_logo.png" alt="highlight" width="50">
+                        </div>
+                        <div class="text">
+                            <p>Highlights</p>
+                        </div>
+                    </div>
+                </h2>
+            
+                <img src="assets/images/teaser.png" class="interpolation-image" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto" />
+
+                <div class="content has-text-justified">
+                    <p>
+                        <ul>
+                            <li><b>
+                                    We propose <span style="color: #E4A902;">SpikePingpong</span>, a novel robot learning framework that decomposes the complex table tennis task into specialized interception and hitting phases, addressing the limitations of both traditional control-based and learning-based approaches.
+                                </b></li>
+                            <br>
+                            <li><b>
+                                    We introduce a comprehensive neural control system combining<span style="color: #E4A902;">SONIC</span>, a calibration system for precise ball-racket interaction prediction, and <span style="color: #E4A902;">IMPACT</span>, an imitation learning framework that captures expert striking strategies through demonstrations to enable precise control over ball landing positions.
+                                </b></li>
+                            <br>
+                            <li><b>
+                                    Experimental results demonstrate that SpikePingpong achieves a remarkable <span style="color: #E4A902;">91% success rate for 30cm accuracy zones</span> and <span style="color: #E4A902;">71% for high-precision 20cm targeting</span> across four distinct target regions, surpassing previous state-of-the-art approaches by 38% and 37% respectively.
+                                </b></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Motivation -->
+    <!-- <section class="section hero">
+        <div class="container is-max-desktop">
+            <div class="is-centered has-text-centered">
+                <div class="is-four-fifths">
+                    <h2 class="title is-3">Motivation</h2>
+                    <img src="assets/images/motivation.png" class="interpolation-image" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto" />
+                    <div class="content has-text-justified">
+                        <p>
+                            Illustration of different Gaussian updates. 
+                            Left: Previous approach with random position updates <b><span style="color: #209CEF;">lacking geometric constraints</span></b>. 
+                            Right: Our approach with surface normal-guided updates that <b><span style="color: #209CEF;">leverage planar priors</span></b> for more accurate indoor scene representation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Paper abstract -->
+    <section class="section hero">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Learning to control high-speed objects in the real world remains a challenging frontier in robotics. 
+                            Table tennis serves as an ideal testbed for this problem, demanding both rapid interception of fast-moving balls and precise adjustment of their trajectories. 
+                            This task presents two fundamental challenges: it requires a high-precision vision system capable of accurately predicting ball trajectories, and it necessitates intelligent strategic planning to ensure precise ball placement to target regions. 
+                            The dynamic nature of table tennis, coupled with its real-time response requirements, makes it particularly well-suited for advancing robotic control capabilities in fast-paced, precision-critical domains.
+                            In this paper, we present SpikePingpong, a novel system that integrates spike-based vision with imitation learning for high-precision robotic table tennis. 
+                            Our approach introduces two key attempts that directly address the aforementioned challenges: SONIC, a spike camera-based module that achieves millimeter-level precision in ball-racket contact prediction by compensating for real-world uncertainties such as air resistance and friction; 
+                            and IMPACT, a strategic planning module that enables accurate ball placement to targeted table regions. 
+                            The system harnesses a 20 kHz spike camera for high-temporal resolution ball tracking, combined with efficient neural network models for real-time trajectory correction and stroke planning.
+                            Experimental results demonstrate that SpikePingpong achieves a remarkable 91% success rate for 30 cm accuracy target area and 71% in the more challenging 20 cm accuracy task, surpassing previous state-of-the-art approaches by 38% and 37% respectively. 
+                            These significant performance improvements enable the robust implementation of sophisticated tactical gameplay strategies, providing a new research perspective for robotic control in high-speed dynamic tasks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End paper abstract -->
+
+
+
+    <!-- overview -->
+    <section class="section hero">
+        <div class="container is-max-desktop">
+            <div class="is-centered has-text-centered">
+                <div class="is-four-fifths">
+                    <h2 class="title is-3">Method Overview</h2>
+                    <img src="assets/images/method.png" class="interpolation-image" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto" />
+                    <div class="content has-text-justified">
+                        <p>
+                            <b>Framework of SpikePingpong.</b> Our system integrates three key components: 
+                            (1) initial trajectory prediction using RGB-D camera data, 
+                            (2) SONIC module for refined hittable position estimation through neuromorphic vision, and 
+                            (3) IMPACT module for strategic motion planning and control. 
+                            This comprehensive pipeline enables precise ball interception and tactical return placement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- element -->
+    <!-- <section class="section hero">
+        <div class="container is-max-desktop">
+            <div class="is-centered has-text-centered">
+                <div class="is-four-fifths">
+                    <h2 class="title is-3">Geometry-guided Refinement Module</h2>
+                    <img src="assets/images/refine_layer.png" class="interpolation-image" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto" />
+                    <div class="content has-text-justified">
+                        <p>
+                            <b>Geometry-guided Refinement Module.</b> Given a constraint, our model ConSeg generates
+                            instance-level and part-level masks across multiple views, which are projected into 3D
+                            space. Through a series of heuristics, the desired elements are produced. Once all elements
+                            are obtained, they are annotated onto the original multi-view images.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!--  Visual  -->
+    <section class="section hero">
+        <div class="container is-max-desktop">
+            <div class="is-centered has-text-centered">
+                <div class="is-four-fifths">
+                    <h2 class="title is-3">Ball-Racket Contact Precision Evaluation</h2>
+                    <img src="assets/images/exp1.png" class="interpolation-image" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto" />
+                    <div class="content has-text-justified">
+                        <p> <b>Our SONIC module achieves exceptional performance with a mean absolute error of 2.47mm and root mean square error of 3.13mm for deviation prediction. Visual validation through spike camera captures confirms SONIC's effectiveness, showing substantially improved contact precision with minimal separation between ball center and racket center when activated, demonstrating how millimeter-level prediction accuracy translates into enhanced physical interception performance. </b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section hero">
+        <div class="container is-max-desktop">
+            <div class="is-centered has-text-centered">
+                <div class="is-four-fifths">
+                    <h2 class="title is-3">Empirical Assessment of Spatial Control Capabilities</h2>
+                    <img src="assets/images/exp2.png" class="interpolation-image" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto" />
+                    <div class="content has-text-justified">
+                        <p> <b>We conducted comparative evaluations against baseline methods across four target regions (A, B, C, and D). SpikePingpong achieves exceptional performance with an average success rate of 91% within the 30cm accuracy zone and 71% within the 20cm high-precision zone, demonstrating superior precision control in tactical ball placement. </b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section hero">
+        <div class="container is-max-desktop">
+            <div class="is-centered has-text-centered">
+                <div class="is-four-fifths">
+                    <h2 class="title is-3">Sequential Target Execution Capabilities</h2>
+                    <img src="assets/images/exp3.png" class="interpolation-image" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto" />
+                    <div class="content has-text-justified">
+                        <p> <b>To evaluate tactical sequence execution, we designed experiments involving 20 consecutive returns with random target sequences. SpikePingpong achieves an overall sequence success rate of 95%, demonstrating that our system maintains precision during extended tactical sequences and represents a significant advancement toward sustained strategic gameplay rather than merely returning balls. </b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--BibTex citation -->
+    <!-- <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{wang2025embodiedocc++,
+    title={EmbodiedOcc++: Boosting Embodied 3D Occupancy Prediction with Plane Regularization and Uncertainty Sampler},
+    author={Wang, Hao and Wei, Xiaobao and Zhang, Xiaoan and Li, Jianing and Bai, Chengyu and Li, Ying and Lu, Ming and Zheng, Wenzhao and Zhang, Shanghang},
+    journal={arXiv preprint arXiv:2504.09540},
+    year={2025}
+}</code></pre>
+        </div>
+    </section> -->
+    <!--End BibTex citation -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+
+                        <p>
+                            This page was built using the <a
+                                href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                            You are free to borrow the of this website, we just ask that you link back to this page in
+                            the footer.
+                            <br> This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
