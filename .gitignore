@@ -1,0 +1,7 @@
+/deployment/v4/model_data
+/sonic/processed_data
+/sonic/checkpoints
+/impact/processed_data
+/impact/checkpoints
+/impact/baselines/act/checkpoints
+/impact/baselines/dp/checkpoints
