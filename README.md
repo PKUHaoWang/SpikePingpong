@@ -1,8 +1,111 @@
-# SpikePingpong: High-Frequency Spike Vision-based Robot Learning for Precise Striking in Table Tennis Game
+<div align="center">
 
-## Overview
+# 🏓 SpikePingpong: High-Frequency Spike Vision-based Robot Learning for Precise Striking in Table Tennis Game
+  
+[🌐**Project Page**](https://pkuhaowang.github.io/SpikePingpong/) | [✍️**Paper(Arxiv)**](https://arxiv.org/abs/2506.06690) 
+
+[Hao Wang](https://pkuhaowang.github.io)\*, [Chengkai Hou](https://jackhck.github.io/)\*, [Xianglong Li](https://ieeexplore.ieee.org/author/37089431576)*, [Yankai Fu](https://github.com/AureleoPKU), [Chenxuan Li](https://github.com/2644521362), [Ning Chen](https://github.com/ccdcs), [Gaole Dai](https://scholar.google.com/citations?user=2Of6xZUAAAAJ&hl=en&oi=sra), 
+
+[Jiaming Liu](https://liujiaming1996.github.io/), [Tiejun Huang](https://idm.pku.edu.cn/info/1017/1040.htm), [Shanghang Zhang](https://www.shanghangzhang.com)
+
+</div>
+
+
 ![overview](./assets/framework.png)
+**SpikePingpong** is a novel system that integrates spike-based vision with imitation learning for high-precision robotic table tennis.
 
-Learning to control high-speed objects in the real world remains a challenging frontier in robotics. Table tennis serves as an ideal testbed for this problem, demanding both rapid interception of fast-moving balls and precise adjustment of their trajectories. This task presents two fundamental challenges: it requires a high-precision vision system capable of accurately predicting ball trajectories, and it necessitates intelligent strategic planning to ensure precise ball placement to target regions. The dynamic nature of table tennis, coupled with its real-time response requirements, makes it particularly well-suited for advancing robotic control capabilities in fast-paced, precision-critical domains.
-In this paper, we present SpikePingpong, a novel system that integrates spike-based vision with imitation learning for high-precision robotic table tennis. Our approach introduces two key attempts that directly address the aforementioned challenges: SONIC, a spike camera-based module that achieves millimeter-level precision in ball-racket contact prediction by compensating for real-world uncertainties such as air resistance and friction; and IMPACT, a strategic planning module that enables accurate ball placement to targeted table regions. The system harnesses a 20 kHz spike camera for high-temporal resolution ball tracking, combined with efficient neural network models for real-time trajectory correction and stroke planning.
-Experimental results demonstrate that SpikePingpong achieves a remarkable 91\% success rate for 30 cm accuracy target area and 71\% in the more challenging 20 cm accuracy task, surpassing previous state-of-the-art approaches by 38\% and 37\% respectively. These significant performance improvements enable the robust implementation of sophisticated tactical gameplay strategies, providing a new research perspective for robotic control in high-speed dynamic tasks.
+## ✨ News ✨
+- [2025/06/27] The SpikePingpong code has been officially released! 🎉 Check it out now for detailed implementation and usage.
+
+- [2025/06/07] SpikePingpong is now live on arXiv! 🚀 
+
+## 📦 Installation
+
+<details>
+<summary>1. Clone the repository</summary>
+
+```bash
+git clone https://github.com/PKUHaoWang/SpikePingpong.git
+```
+
+</details>
+
+<details>
+<summary>2. Create conda environment with python 3.11</summary>
+
+```bash
+conda create -n <env_name> python=3.9
+conda activate <env_name>
+```
+
+</details>
+
+<details>
+<summary>3. Install PyTorch compatible with your CUDA and GPUs</summary>
+
+```bash
+# Modify this line according to your CUDA GPUs.
+conda install pytorch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 pytorch-cuda=12.1 -c pytorch -c nvidia
+```
+
+</details>
+
+<details>
+<summary>4. Install other requirements</summary>
+
+```bash
+pip install -r requirements.txt
+```
+
+</details>
+
+## 💡Usage Guide
+### Training SONIC Module
+Preprocess the dataset:
+```bash
+python sonic/preprocess.py
+```
+
+Train the SONIC model:
+```bash
+python sonic/train.py
+```
+
+### Imitation Learning Data Collection
+Camera calibration:
+```bash
+python deployment/aruco_calibrate.py
+```
+
+Collect training data:
+```bash
+python deployment/main_collect.py
+```
+
+### Training IMPACT Module
+Start training IMPACT
+```bash
+python impact/train.py
+```
+
+### System Deployment
+Camera calibration:
+```bash
+python deployment/aruco_calibrate.py
+```
+
+Start the hitting system:
+```bash
+python deployment/main_deploy.py
+```
+
+## 📚 BibTeX 
+
+```bibtex
+@article{wang2025spikepingpong,
+    title={SpikePingpong: High-Frequency Spike Vision-based Robot Learning for Precise Striking in Table Tennis Game},
+    author={Wang, Hao and Hou, Chengkai and Li, Xianglong and Fu, Yankai and Li, Chenxuan and Chen, Ning and Dai, Gaole and Liu, Jiaming and Huang, Tiejun and Zhang, Shanghang},
+    journal={arXiv preprint arXiv:2506.06690},
+    year={2025}
+}
+```
