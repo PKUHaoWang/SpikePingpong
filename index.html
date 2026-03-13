@@ -10,7 +10,7 @@
           <img src="./assets/images/logo.png">
         </a>
     </div> -->
-    <title>SpikePingpong: High-Frequency Spike Vision-based Robot Learning for Precise Striking in Table Tennis Game
+    <title>[ICLR 2026]SpikePingpong: Spike Vision-based Fast-Slow Pingpong Robot System
     </title>
 
     <!-- <script>
@@ -182,36 +182,6 @@
         </div>
     </section>
 
-     <!-- YouTube Video -->
-     <section class="hero is-small">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered has-text-centered">
-                    <div class="column is-four-fifths">
-                        <div class="content">
-                            <h2>
-                                <!-- <h2 class=""> <img src="static/images/highlight_logo.png" width="50"> Highlights</h2> -->
-                                <div class="text-image-container title is-3">
-                                    <div>
-                                        <img src="assets/images/video_logo.png" alt="highlight" width="40">
-                                    </div>
-                                    <div class="text">
-                                        <p>Summary Video</p>
-                                    </div>
-                                </div>
-                            </h2>
-                            <div class="publication-video">
-                                <!---TODO Dhruv: put video link here-->
-                                <iframe src="https://www.youtube.com/embed/r3ppY2yGz8E?si=NNST1BwvVDUHP5Rs"
-                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="hero is-small">
 
         <div class="hero-body">
@@ -236,15 +206,15 @@
                     <p>
                         <ul>
                             <li><b>
-                                    We propose <span style="color: #E4A902;">SpikePingpong</span>, a novel robot learning framework that decomposes the complex table tennis task into specialized interception and hitting phases, addressing the limitations of both traditional control-based and learning-based approaches.
+                                We design and implement a comprehensive robotic table tennis system that systematically addresses high-speed dynamic manipulation through task-specific decomposition and Fast-Slow architecture.
                                 </b></li>
                             <br>
                             <li><b>
-                                    We introduce a comprehensive neural control system combining <span style="color: #E4A902;">SONIC</span>, a calibration system for precise ball-racket interaction prediction, and <span style="color: #E4A902;">IMPACT</span>, an imitation learning framework that captures expert striking strategies through demonstrations to enable precise control over ball landing positions.
+                                We develop a Fast-Slow system perception framework that enables accurate trajectory prediction using conventional cameras through neural error correction, complemented by real-world imitation learning for precise ball striking control.
                                 </b></li>
                             <br>
                             <li><b>
-                                    Experimental results demonstrate that SpikePingpong achieves a remarkable <span style="color: #E4A902;">91% success rate for 30cm accuracy zones</span> and <span style="color: #E4A902;">71% for high-precision 20cm targeting</span> across four distinct target regions, surpassing previous state-of-the-art approaches by 38% and 37% respectively.
+                                We conduct extensive experimental evaluation demonstrating superior performance with 92\% success rate in 30cm zones and 70\% accuracy in challenging 20cm precision targeting, validating the effectiveness of our integrated approach.
                                 </b></li>
                         </ul>
                     </p>
@@ -282,16 +252,16 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Learning to control high-speed objects in the real world remains a challenging frontier in robotics. 
-                            Table tennis serves as an ideal testbed for this problem, demanding both rapid interception of fast-moving balls and precise adjustment of their trajectories. 
-                            This task presents two fundamental challenges: it requires a high-precision vision system capable of accurately predicting ball trajectories, and it necessitates intelligent strategic planning to ensure precise ball placement to target regions. 
-                            The dynamic nature of table tennis, coupled with its real-time response requirements, makes it particularly well-suited for advancing robotic control capabilities in fast-paced, precision-critical domains.
-                            In this paper, we present SpikePingpong, a novel system that integrates spike-based vision with imitation learning for high-precision robotic table tennis. 
-                            Our approach introduces two key attempts that directly address the aforementioned challenges: SONIC, a spike camera-based module that achieves millimeter-level precision in ball-racket contact prediction by compensating for real-world uncertainties such as air resistance and friction; 
-                            and IMPACT, a strategic planning module that enables accurate ball placement to targeted table regions. 
-                            The system harnesses a 20 kHz spike camera for high-temporal resolution ball tracking, combined with efficient neural network models for real-time trajectory correction and stroke planning.
-                            Experimental results demonstrate that SpikePingpong achieves a remarkable 91% success rate for 30 cm accuracy target area and 71% in the more challenging 20 cm accuracy task, surpassing previous state-of-the-art approaches by 38% and 37% respectively. 
-                            These significant performance improvements enable the robust implementation of sophisticated tactical gameplay strategies, providing a new research perspective for robotic control in high-speed dynamic tasks.
+                            Learning to control high-speed objects in dynamic environments represents a fundamental challenge in robotics. 
+                            Table tennis serves as an ideal testbed for advancing robotic capabilities in dynamic environments. 
+                            This task presents two fundamental challenges: it requires a high-precision vision system capable of accurately predicting ball trajectories under complex dynamics, and it necessitates intelligent control strategies to ensure precise ball striking to target regions. 
+                            High-speed object manipulation typically demands advanced visual perception hardware capable of capturing rapid motion with exceptional temporal resolution.
+                            Drawing inspiration from Kahneman's dual-system theory, where fast intuitive processing complements slower deliberate reasoning, there exists an opportunity to develop more robust perception architectures that can handle high-speed dynamics while maintaining accuracy.
+                            To this end, we present SpikePingpong, a novel system that integrates spike-based vision with imitation learning for high-precision robotic table tennis. 
+                            We develop a Fast-Slow system architecture where System 1 provides rapid ball detection and preliminary trajectory prediction with millisecond-level responses, while System 2 employs spike-oriented neural calibration for precise hittable position corrections. 
+                            For strategic ball striking, we introduce Imitation-based Motion Planning And Control Technology, which learns optimal robotic arm striking policies through demonstration-based learning.
+                            Experimental results demonstrate that SpikePingpong achieves a remarkable 92\% success rate for 30 cm accuracy zones and 70\% in the more challenging 20 cm precision targeting. 
+                            This work demonstrates the potential of Fast-Slow architectures for advancing robotic capabilities in time-critical manipulation tasks.
                         </p>
                     </div>
                 </div>
@@ -308,15 +278,13 @@
             <div class="is-centered has-text-centered">
                 <div class="is-four-fifths">
                     <h2 class="title is-3">Method Overview</h2>
-                    <img src="assets/images/method.png" class="interpolation-image" alt=""
+                    <img src="assets/images/framework.png" class="interpolation-image" alt=""
                         style="display: block; margin-left: auto; margin-right: auto" />
                     <div class="content has-text-justified">
                         <p>
-                            <b>Framework of SpikePingpong.</b> Our system integrates three key components: 
-                            (1) initial trajectory prediction using RGB-D camera data, 
-                            (2) SONIC module for refined hittable position estimation through neuromorphic vision, and 
-                            (3) IMPACT module for strategic motion planning and control. 
-                            This comprehensive pipeline enables precise ball interception and tactical return placement.
+                            <b>Framework of SpikePingpong.</b> The system comprises two integrated components: 
+                            (1) A Fast-Slow perception architecture, where System 1 delivers rapid trajectory prediction using RGB-D data, while System 2 functions as a Spike-Oriented Neural Improvement Calibrator to refine the estimated hittable position; 
+                            and (2) The IMPACT module, which facilitates strategic motion planning and control, enabling tactical return placement via imitation learning.
                         </p>
                     </div>
                 </div>
@@ -351,11 +319,11 @@
         <div class="container is-max-desktop">
             <div class="is-centered has-text-centered">
                 <div class="is-four-fifths">
-                    <h2 class="title is-3">Ball-Racket Contact Precision Evaluation</h2>
+                    <h2 class="title is-3">System Precision and Efficiency</h2>
                     <img src="assets/images/exp1.png" class="interpolation-image" alt=""
                         style="display: block; margin-left: auto; margin-right: auto" />
                     <div class="content has-text-justified">
-                        <p> <b>Our SONIC module achieves exceptional performance with a mean absolute error of 2.47mm and root mean square error of 3.13mm for deviation prediction. Visual validation through spike camera captures confirms SONIC's effectiveness, showing substantially improved contact precision with minimal separation between ball center and racket center when activated, demonstrating how millimeter-level prediction accuracy translates into enhanced physical interception performance. </b></p>
+                        <p> <b>SpikePingpong ensures exceptional interception accuracy by minimizing spatial deviation between the ball and racket at the point of contact. This high-precision capability is complemented by millisecond-level inference speeds, providing the critical responsiveness necessary for effective robotic arm actuation. </b></p>
                     </div>
                 </div>
             </div>
@@ -366,11 +334,11 @@
         <div class="container is-max-desktop">
             <div class="is-centered has-text-centered">
                 <div class="is-four-fifths">
-                    <h2 class="title is-3">Empirical Assessment of Spatial Control Capabilities</h2>
+                    <h2 class="title is-3">Tactical Spatial Control</h2>
                     <img src="assets/images/exp2.png" class="interpolation-image" alt=""
                         style="display: block; margin-left: auto; margin-right: auto" />
                     <div class="content has-text-justified">
-                        <p> <b>We conducted comparative evaluations against baseline methods across four target regions (A, B, C, and D). SpikePingpong achieves exceptional performance with an average success rate of 91% within the 30cm accuracy zone and 71% within the 20cm high-precision zone, demonstrating superior precision control in tactical ball placement. </b></p>
+                        <p> <b>SpikePingpong exhibits superior interception capabilities across various target regions, significantly outperforming human players and baseline methods in both isolated returns and complex sequential tasks. The system maintains high success rates even under strict precision thresholds, demonstrating its ability to execute consistent, tactical-level gameplay. </b></p>
                     </div>
                 </div>
             </div>
@@ -381,11 +349,11 @@
         <div class="container is-max-desktop">
             <div class="is-centered has-text-centered">
                 <div class="is-four-fifths">
-                    <h2 class="title is-3">Sequential Target Execution Capabilities</h2>
+                    <h2 class="title is-3">Robustness and Out-of-Distribution Generalization</h2>
                     <img src="assets/images/exp3.png" class="interpolation-image" alt=""
                         style="display: block; margin-left: auto; margin-right: auto" />
                     <div class="content has-text-justified">
-                        <p> <b>To evaluate tactical sequence execution, we designed experiments involving 20 consecutive returns with random target sequences. SpikePingpong achieves an overall sequence success rate of 95%, demonstrating that our system maintains precision during extended tactical sequences and represents a significant advancement toward sustained strategic gameplay rather than merely returning balls. </b></p>
+                        <p> <b>SpikePingpong demonstrates robust out-of-distribution generalization, maintaining a 74% success rate under novel ball trajectories and showing significant adaptability to complex human playing styles. These results confirm that the system captures generalizable underlying dynamics rather than overfitting, validating its potential for real-world human-robot interaction. </b></p>
                     </div>
                 </div>
             </div>
@@ -477,11 +445,10 @@
      <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
-            <pre><code>@article{wang2025spikepingpong,
-    title={SpikePingpong: High-Frequency Spike Vision-based Robot Learning for Precise Striking in Table Tennis Game},
-    author={Wang, Hao and Hou, Chengkai and Li, Xianglong and Fu, Yankai and Li, Chenxuan and Chen, Ning and Dai, Gaole and Liu, Jiaming and Huang, Tiejun and Zhang, Shanghang},
-    journal={arXiv preprint arXiv:2506.06690},
-    year={2025}
+            <pre><code>@inproceedings{wangspikepingpong,
+ title={SpikePingpong: Spike Vision-based Fast-Slow Pingpong Robot System},
+ author={Wang, Hao and Hou, Chengkai and Li, Xianglong and Fu, Yankai and Li, Chenxuan and Chen, Ning and Dai, Gaole and Liu, Jiaming and Huang, Tiejun and Zhang, Shanghang},
+ booktitle={The Fourteenth International Conference on Learning Representations}
 }</code></pre>
         </div>
     </section>
