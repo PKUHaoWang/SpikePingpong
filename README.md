@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏓 SpikePingpong: High-Frequency Spike Vision-based Robot Learning for Precise Striking in Table Tennis Game
+# [ICLR 2026] 🏓 SpikePingpong: Spike Vision-based Fast-Slow Pingpong Robot System
   
 [🌐**Project Page**](https://pkuhaowang.github.io/SpikePingpong/) | [✍️**Paper(Arxiv)**](https://arxiv.org/abs/2506.06690) 
 
@@ -15,6 +15,8 @@
 **SpikePingpong** is a novel system that integrates spike-based vision with imitation learning for high-precision robotic table tennis.
 
 ## ✨ News ✨
+- [2026/01/26] SpikePingpong is accepted by ICLR 2026! 🎉
+
 - [2025/06/27] The SpikePingpong code has been officially released! 🎉 Check it out now for detailed implementation and usage.
 
 - [2025/06/07] SpikePingpong is now live on arXiv! 🚀 
